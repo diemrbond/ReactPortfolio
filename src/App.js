@@ -7,6 +7,7 @@ import './App.css';
 import Container from '@material-ui/core/Container';
 import NavBar from "./components/NavBar";
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Hidden from '@material-ui/core/Hidden';
 
 function App() {
   return (
