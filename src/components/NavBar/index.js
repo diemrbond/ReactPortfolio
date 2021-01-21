@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'SB Heading, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji',
   },
   button: {
-        marginRight: theme.spacing(1),
+      marginRight: theme.spacing(1),
       fontSize: '1.2em',
       color: 'white',
       fontWeight: 'bold !important',    
