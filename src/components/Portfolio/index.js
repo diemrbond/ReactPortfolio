@@ -3,7 +3,9 @@ import React from 'react';
 
 // Custom Components
 import Project from '../Project';
+import Modals from '../Modals';
 
+// Images
 import Bodyweight from '../Project/assets/bodyweight.gif'
 import Readme from '../Project/assets/readme.png'
 import Truck from '../Project/assets/truck.png'
@@ -109,6 +111,7 @@ export default function Portfolio() {
                         {images.map((image) => (
                             <Project image={image}/>
                         ))}
+                        <Modals />
                    </Grid>
                    </div>
                 </Grid>
