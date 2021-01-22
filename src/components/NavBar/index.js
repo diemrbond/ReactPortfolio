@@ -5,14 +5,13 @@ import './index.css';
 // Material UI Components
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 import { Link, useLocation } from "react-router-dom";
+import MenuDrawer from '../MenuDrawer'
 
 // Styles
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     background: '#212529',
     height: 95,
     paddingTop: '0.9rem',
+    zIndex: theme.zIndex.drawer + 1,
   },
   toolbar: {
     minHeight: 64
@@ -50,18 +50,15 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-
-const openMenu = () => {
-  console.log("Menu!");
-  return {
-
-  }
-}
+const navLinks = [
+  { title: `Home`, path: `/` },
+  { title: `About`, path: `/About` },
+  { title: `Portfolio`, path: `/Portfolio` },
+];
 
 // NavBar Component
 export default function NavBar() {
   const classes = useStyles();
-
   const location = useLocation();
 
   return (
@@ -86,9 +83,7 @@ export default function NavBar() {
               </div>
             </Hidden>
             <Hidden mdUp>
-              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="open drawer" onClick={openMenu}>
-                <MenuIcon />
-              </IconButton>
+              <MenuDrawer navLinks={navLinks} />
             </Hidden>
           </Container>
         </Toolbar>
