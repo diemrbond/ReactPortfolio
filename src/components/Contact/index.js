@@ -27,8 +27,12 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             color: '#2c3e50',
             background: "#FFFFFF",
-        }
+        },
     },
+    icons: {
+        fontSize: '1.8rem',
+    }
+
 }));
 
 
@@ -39,17 +43,16 @@ export default function Contact() {
         <div >
             <footer className={classes.contact}>
                 <Grid container spacing={0} alignItems="center" justify="center" style={{ minHeight: 310 }}>
-
                     <Grid item xs={12} align="center" className={classes.grid}>
                         <Typography align="center" variant="h4" className={classes.typography}>CONTACT</Typography>
                         {/* "https://www.github.com/diemrbond" */}
-                        <IconButton className={classes.buttons}><Icon className="fab fa-fw fa-github" /></IconButton>
+                        <IconButton className={classes.buttons}><Icon className={"fab fa-fw fa-github " + classes.icons} /></IconButton>
                         {/* "https://www.linkedin.com/in/andrew-kelleher-58018588" */}
-                        <IconButton className={classes.buttons}><Icon className="fab fa-fw fa-linkedin-in" /></IconButton>
+                        <IconButton className={classes.buttons}><Icon className={"fab fa-fw fa-linkedin-in " + classes.icons} /></IconButton>
                         {/* href="mailto:mrbondmustdie@gmail.com" */}
-                        <IconButton className={classes.buttons}><Icon className="far fa-fw fa-envelope" /></IconButton>
+                        <IconButton className={classes.buttons}><Icon className={"far fa-fw fa-envelope " + classes.icons} /></IconButton>
                         {/* href="./assets/docs/AndrewKelleher_Resume.pdf" */}
-                        <IconButton className={classes.buttons}><Icon className="far fa-fw fa-file-pdf" /></IconButton>
+                        <IconButton className={classes.buttons}><Icon className={"far fa-fw fa-file-pdf " + classes.icons} /></IconButton>
                     </Grid>
                 </Grid>
 

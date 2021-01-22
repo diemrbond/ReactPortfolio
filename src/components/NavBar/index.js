@@ -42,8 +42,18 @@ const useStyles = makeStyles((theme) => ({
       color: 'white',
       fontWeight: 'bold !important',    
       fontFamily: 'SB Heading, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji',
+      '&:hover': {
+          color: '#1abc9c',
+      }
   }
 }));
+
+const openMenu = () => {
+  console.log("Menu!");
+  return {
+    
+  }
+}
 
 export default function NavBar() {
       const classes = useStyles();
@@ -64,12 +74,7 @@ export default function NavBar() {
               </div>
               </Hidden>
               <Hidden mdUp>
-              <IconButton
-                edge="start"
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="open drawer"
-              >
+              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="open drawer" onClick={openMenu}>
                 <MenuIcon />
               </IconButton>
               </Hidden>

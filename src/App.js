@@ -6,6 +6,7 @@ import './App.css';
 // Custom Components
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
 
 // Material UI Components
 import Container from '@material-ui/core/Container';
@@ -33,6 +34,7 @@ function App() {
       <CssBaseline />
       <div className={classes.site}>
       <NavBar />
+      <Hero />
       </div>
       <Footer />
     </div>
