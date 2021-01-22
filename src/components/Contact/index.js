@@ -1,11 +1,17 @@
+// React Components
 import React from 'react';
+
+// Custom Components
+import "./index.css";
+
+// Material UI Components
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import "./index.css";
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton'
 import Icon from '@material-ui/core/Icon';
 
+// Styles
 const useStyles = makeStyles((theme) => ({
     contact: {
         background: '#2c3e50',
@@ -35,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-
+// Contact Component
 export default function Contact() {
     const classes = useStyles();
 
@@ -55,7 +61,6 @@ export default function Contact() {
                         <IconButton className={classes.buttons}><Icon className={"far fa-fw fa-file-pdf " + classes.icons} /></IconButton>
                     </Grid>
                 </Grid>
-
             </footer>
         </div>
     );

@@ -13,6 +13,7 @@ import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 
+// Styles
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
 const openMenu = () => {
   console.log("Menu!");
   return {
@@ -55,6 +57,7 @@ const openMenu = () => {
   }
 }
 
+// NavBar Component
 export default function NavBar() {
       const classes = useStyles();
 

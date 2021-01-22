@@ -1,9 +1,15 @@
+// React Components
 import React from 'react';
+
+// Custom Components
+import Contact from '../Contact';
+
+// Material UI Components
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Contact from '../Contact';
 
+// Styles
 const useStyles = makeStyles((theme) => ({
   footer: {
     background: '#1a252f',
@@ -17,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+// Footer Component
 export default function Footer() {
   const classes = useStyles();
 

@@ -37,7 +37,7 @@
     }
 }
 
-.divider-custom {
+.divider-custom-white {
     margin: 1.25rem 0 1.0rem;
     width: 100%;
     display: flex;
@@ -46,7 +46,7 @@
     color: white;
 }
 
-.divider-custom .divider-custom-line {
+.divider-custom-white .divider-custom-white-line {
     width: 100%;
     max-width: 7rem;
     height: .25rem;
@@ -55,23 +55,23 @@
     border-color: white !important
 }
 
-.divider-custom .divider-custom-line:first-child {
+.divider-custom-white .divider-custom-white-line:first-child {
     margin-right: 1rem
 }
 
-.divider-custom .divider-custom-line:last-child {
+.divider-custom-white .divider-custom-white-line:last-child {
     margin-left: 1rem
 }
 
-.divider-custom .divider-custom-icon {
+.divider-custom-white .divider-custom-white-icon {
     color: white !important;
     font-size: 2rem
 }
 
-.divider-custom.divider-light .divider-custom-line {
+.divider-custom-white.divider-light .divider-custom-white-line {
     background-color: #fff
 }
 
-.divider-custom.divider-light .divider-custom-icon {
+.divider-custom-white.divider-light .divider-custom-white-icon {
     color: #fff !important
 }

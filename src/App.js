@@ -1,17 +1,18 @@
 // React Components
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import './App.css';
 
 // Custom Components
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import About from "./components/About";
 
 // Material UI Components
-import Container from '@material-ui/core/Container';
+// import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Hidden from '@material-ui/core/Hidden';
+// import Hidden from '@material-ui/core/Hidden';
 import { makeStyles } from '@material-ui/core/styles';
 
 // Styles
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// App Function
 function App() {
   const classes = useStyles();
 
@@ -35,6 +37,7 @@ function App() {
       <div className={classes.site}>
       <NavBar />
       <Hero />
+      <About />
       </div>
       <Footer />
     </div>

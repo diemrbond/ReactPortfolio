@@ -1,12 +1,17 @@
+// React Components
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 import "./index.css";
-import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton'
-import Icon from '@material-ui/core/Icon';
+
+// Custom Components
 import Avatar from './Avatar.png';
 
+// Material UI Components
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Icon from '@material-ui/core/Icon';
+
+// Styles
 const useStyles = makeStyles((theme) => ({
     hero: {
         color: 'white',
@@ -26,19 +31,9 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.5rem',
         marginTop: 14,
     },
-    buttons: {
-        color: '#FFFFFF',
-        background: '#2c3e50',
-        margin: 10,
-        border: '2px solid white',
-        '&:hover': {
-            color: '#2c3e50',
-            background: "#FFFFFF",
-        }
-    },
 }));
 
-
+// Hero Component
 export default function Hero() {
     const classes = useStyles();
 
@@ -49,16 +44,15 @@ export default function Hero() {
                      <Grid item xs={12} align="center" className={classes.grid}>
                         <img src={Avatar} alt="Avatar" className={classes.avatar} />
                         <Typography align="center" variant="h4" className={classes.typography}>ANDREW KELLEHER</Typography>                          
-                        <div class="divider-custom">
-                            <div class="divider-custom-line"></div>
-                            <div class="divider-custom-icon"><Icon className={"fas fa-code " + classes.icons} /></div>
-                            <div class="divider-custom-line"></div>
+                        <div class="divider-custom-white">
+                            <div class="divider-custom-white-line"></div>
+                            <div class="divider-custom-white-icon"><Icon className="fas fa-code" /></div>
+                            <div class="divider-custom-white-line"></div>
                         </div>
                         <Typography align="center" variant="subtitle1" className={classes.subtitle}>Multimedia Design & Web Development</Typography>                        
                     </Grid>
                 </Grid>
             </div>
-
         </div>
     );
 }
