@@ -4,36 +4,54 @@ import React from 'react';
 // Custom Components
 import Project from '../Project';
 
+import Bodyweight from '../Project/assets/bodyweight.gif'
+import Readme from '../Project/assets/readme.png'
+import Truck from '../Project/assets/truck.png'
+import Team from '../Project/assets/team.png'
+import Interface from '../Project/assets/interface.gif'
+import Burger from '../Project/assets/burger.png'
+import Quiz from '../Project/assets/quiz.png'
+import Weather from '../Project/assets/weather.png'
+
+
 // Material UI Components
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
-import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
-
-import Bodyweight from '../Project/assets/bodyweight.gif'
-import Readme from '../Project/assets/readme.png'
-import Truck from '../Project/assets/truck.png'
 
 const images = [
     {
       url: Truck,
       title: 'DirectShip WA',
-      width: 332,
-      height: 240
     },
     {
       url: Bodyweight,
       title: 'Bodyweight Gym',
-      width: 332,
-      height: 240
     },
     {
       url: Readme,
       title: 'Readme Generator',
-      width: 332,
-      height: 240
+    },
+    {
+      url: Team,
+      title: 'Team Generator',
+    },
+    {
+      url: Interface,
+      title: 'Interface Design',
+    },
+    {
+      url: Burger,
+      title: 'Eat the Burger!',
+    },
+    {
+      url: Quiz,
+      title: 'JavaScript Quiz',
+    },
+    {
+      url: Weather,
+      title: 'Weather Dashboard',
     },
   ];
 

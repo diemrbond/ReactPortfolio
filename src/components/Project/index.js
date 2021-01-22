@@ -75,7 +75,7 @@ export default function Project(props) {
   const image = props.image;
 
   return (      
-         <ButtonBase focusRipple key={image.title} className={classes.image} focusVisibleClassName={classes.focusVisible} style={{width: image.width, }}>
+         <ButtonBase focusRipple key={image.title} className={classes.image} focusVisibleClassName={classes.focusVisible} style={{width: 332, }}>
            <img className={classes.imageSrc} src={image.url} />
            <span className={classes.imageBackdrop} />
            <span className={classes.rolloverIcon} ><Icon className={"fas fa-search fa-3x " + classes.icons} /></span>
