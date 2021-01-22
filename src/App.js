@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Portfolio from "./components/Portfolio";
 
 // Material UI Components
 // import Container from '@material-ui/core/Container';
@@ -38,6 +39,7 @@ function App() {
       <NavBar />
       <Hero />
       <About />
+      <Portfolio />
       </div>
       <Footer />
     </div>
