@@ -1,5 +1,5 @@
 // React Components
-import React from 'react';
+import React, { useState } from 'react';
 
 // Custom Components
 import Project from '../Project';
@@ -95,6 +95,7 @@ const useStyles = makeStyles((theme) => ({
 // Portfolio Component
 export default function Portfolio() {
     const classes = useStyles();
+    const [whichModal, setWhichModal] = useState("");
 
     return (
         <div >
@@ -109,9 +110,9 @@ export default function Portfolio() {
                             <div className="divider-custom-line"></div>
                         </div>
                         {images.map((image) => (
-                            <Project image={image}/>
+                            <Project image={image} modalDetails={whichModal} setWhichModal={setWhichModal}/>
                         ))}
-                        <Modals />
+                        <Modals modalDetails={whichModal} setWhichModal={setWhichModal}/>
                    </Grid>
                    </div>
                 </Grid>

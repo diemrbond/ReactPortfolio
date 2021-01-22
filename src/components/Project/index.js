@@ -74,8 +74,15 @@ export default function Project(props) {
   const classes = useStyles();
   const image = props.image;
 
+  const modalDetails = props.modalDetails;
+  const setWhichModal = props.setWhichModal;
+
+  const handleOpen = (which) => {
+    setWhichModal(which);
+  };
+  
   return (      
-         <ButtonBase focusRipple key={image.title} className={classes.image} focusVisibleClassName={classes.focusVisible} style={{width: 332, }}>
+         <ButtonBase onClick={() => handleOpen(image.title)} focusRipple key={image.title} className={classes.image} focusVisibleClassName={classes.focusVisible} style={{width: 332, }}>
            <img className={classes.imageSrc} alt={image.title} src={image.url} />
            <span className={classes.imageBackdrop} />
            <span className={classes.rolloverIcon} ><Icon className={"fas fa-search fa-3x " + classes.icons} /></span>
