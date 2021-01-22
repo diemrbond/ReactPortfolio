@@ -90,18 +90,7 @@ export default function Modals() {
       <button type="button" onClick={handleOpen}>
         react-transition-group
       </button>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
+      <Modal aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description" className={classes.modal} open={open} onClose={handleClose} closeAfterTransition BackdropComponent={Backdrop} BackdropProps={{timeout: 500,}}>
         <Fade in={open}>
           <div className={classes.paper} align="center">
             <Typography id="transition-modal-title" align="center" variant="h2" className={classes.typography}>Weather Dashboard</Typography>  

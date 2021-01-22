@@ -51,14 +51,10 @@ export default function Contact() {
                 <Grid container spacing={0} alignItems="center" justify="center" style={{ minHeight: 310 }}>
                     <Grid item xs={12} align="center" className={classes.grid}>
                         <Typography align="center" variant="h4" className={classes.typography}>CONTACT</Typography>
-                        {/* "https://www.github.com/diemrbond" */}
-                        <IconButton className={classes.buttons}><Icon className={"fab fa-fw fa-github " + classes.icons} /></IconButton>
-                        {/* "https://www.linkedin.com/in/andrew-kelleher-58018588" */}
-                        <IconButton className={classes.buttons}><Icon className={"fab fa-fw fa-linkedin-in " + classes.icons} /></IconButton>
-                        {/* href="mailto:mrbondmustdie@gmail.com" */}
-                        <IconButton className={classes.buttons}><Icon className={"far fa-fw fa-envelope " + classes.icons} /></IconButton>
-                        {/* href="./assets/docs/AndrewKelleher_Resume.pdf" */}
-                        <IconButton className={classes.buttons}><Icon className={"far fa-fw fa-file-pdf " + classes.icons} /></IconButton>
+                        <IconButton className={classes.buttons} onClick={() => window.open("https://www.github.com/diemrbond", "_blank")}><Icon className={"fab fa-fw fa-github " + classes.icons} /></IconButton>
+                        <IconButton className={classes.buttons} onClick={() => window.open("https://www.linkedin.com/in/andrew-kelleher-58018588", "_blank")}><Icon className={"fab fa-fw fa-linkedin-in " + classes.icons} /></IconButton>
+                        <IconButton className={classes.buttons} onClick={() => window.open("mailto:mrbondmustdie@gmail.com", "_blank")}><Icon className={"far fa-fw fa-envelope " + classes.icons} /></IconButton>
+                        <IconButton className={classes.buttons} onClick={() => window.open("./assets/docs/AndrewKelleher_Resume.pdf", "_blank")}><Icon className={"far fa-fw fa-file-pdf " + classes.icons} /></IconButton>
                     </Grid>
                 </Grid>
             </footer>
