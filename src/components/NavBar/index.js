@@ -12,7 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
-
+import { Link, useLocation } from "react-router-dom";
 
 // Styles
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     background: '#212529',
     height: 95,
-    paddingTop: '0.55rem',
+    paddingTop: '0.9rem',
   },
   toolbar: {
     minHeight: 64
@@ -35,18 +35,18 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: '1.85em',
-    fontWeight: 'bold !important',    
+    fontWeight: 'bold !important',
     fontFamily: 'SB Heading, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji',
   },
   button: {
-      marginRight: theme.spacing(1),
-      fontSize: '1.2em',
-      color: 'white',
-      fontWeight: 'bold !important',    
-      fontFamily: 'SB Heading, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji',
-      '&:hover': {
-          color: '#1abc9c',
-      }
+    marginRight: theme.spacing(1),
+    fontSize: '1.2em',
+    color: 'white',
+    fontWeight: 'bold !important',
+    fontFamily: 'SB Heading, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji',
+    '&:hover': {
+      color: '#1abc9c',
+    }
   }
 }));
 
@@ -54,37 +54,47 @@ const useStyles = makeStyles((theme) => ({
 const openMenu = () => {
   console.log("Menu!");
   return {
-    
+
   }
 }
 
 // NavBar Component
 export default function NavBar() {
-      const classes = useStyles();
+  const classes = useStyles();
 
-      return (
-        <div className={classes.root}>
-          <AppBar position="static" className={classes.root}>
-            <Toolbar className={classes.toolbar}>   
-            <Container className={classes.container} >       
-              <Typography className={classes.title} variant="h6" noWrap>
-                ANDREW KELLEHER
+  const location = useLocation();
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="fixed" className={classes.root}>
+        <Toolbar className={classes.toolbar}>
+          <Container className={classes.container} >
+            <Typography className={classes.title} variant="h6" noWrap>
+              ANDREW KELLEHER
               </Typography>
-              <Hidden smDown>
+            <Hidden smDown>
               <div>
-                <Button className={classes.button}>ABOUT</Button>
-                <Button className={classes.button}>PORTFOLIO</Button>
-                <Button className={classes.button}>CONTACT</Button>
+                <Link to="/" className={location.pathname === "/" ? "active" : "not-active"}>
+                  <Button className={classes.button}>Home</Button>
+                </Link>
+                <Link to="/About" className={location.pathname === "/About" ? "active" : "not-active"}>
+                  <Button className={classes.button}>ABOUT</Button>
+                </Link>
+                <Link to="/Portfolio" className={location.pathname === "/Portfolio" ? "active" : "not-active"}>
+                  <Button className={classes.button}>PORTFOLIO</Button>
+                </Link>
               </div>
-              </Hidden>
-              <Hidden mdUp>
+            </Hidden>
+            <Hidden mdUp>
               <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="open drawer" onClick={openMenu}>
                 <MenuIcon />
               </IconButton>
-              </Hidden>
-            </Container>    
-            </Toolbar>
-          </AppBar>
-        </div>
-      );
+            </Hidden>
+          </Container>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
+
+

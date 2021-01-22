@@ -94,10 +94,10 @@ export default function Modals() {
         <Fade in={open}>
           <div className={classes.paper} align="center">
             <Typography id="transition-modal-title" align="center" variant="h2" className={classes.typography}>Weather Dashboard</Typography>  
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><Icon className="fas fa-star" /></div>
-                <div class="divider-custom-line"></div>
+            <div className="divider-custom">
+                <div className="divider-custom-line"></div>
+                <div className="divider-custom-icon"><Icon className="fas fa-star" /></div>
+                <div className="divider-custom-line"></div>
             </div>
             <img className={classes.imageSrc} alt="" src={WeatherPreview} smDown={9}/>
             <Typography id="transition-modal-description" variant="body1" className={classes.body}>For this project we needed to make a Weather Dashboard, that we can search for a City using the openweathermap API returning the temperature, humidity, UV index, wind speed and a 5 day forecast. The cities needed to be added to a search history for easy re-searching.</Typography>

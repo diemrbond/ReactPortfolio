@@ -64,10 +64,10 @@ export default function About() {
                     <div>
                      <Grid item xs={12} align="center" className={classes.grid}>
                         <Typography align="center" variant="h4" className={classes.typography}>ABOUT</Typography>                          
-                        <div class="divider-custom">
-                            <div class="divider-custom-line"></div>
-                            <div class="divider-custom-icon"><Icon className="fas fa-question" /></div>
-                            <div class="divider-custom-line"></div>
+                        <div className="divider-custom">
+                            <div className="divider-custom-line"></div>
+                            <div className="divider-custom-icon"><Icon className="fas fa-question" /></div>
+                            <div className="divider-custom-line"></div>
                         </div>
                         <Grid container alignItems="top" justify="center" className={classes.paragraph}>
                             <Grid item xs={9} sm={9} md={3}>
