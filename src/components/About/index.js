@@ -35,6 +35,13 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         textTransform: 'unset !important',
+        margin: 5,
+        color: '#000000',
+        background: '#ffc107',
+        '&:hover': {
+          color: '#000000',
+          background: "#e0a800",
+      },
     },
     grid: {
         paddingTop: 50,
@@ -71,7 +78,7 @@ export default function About() {
                             </Grid>
                         </Grid>
                         <Box m={5} >
-                            <Button variant="contained" color="warning" disableElevation size="large" className={classes.button}><Icon className="far fa-fw fa-file-pdf" /> View Résumé</Button>
+                            <Button variant="contained" disableElevation size="large" className={classes.button} onClick={() => window.open("./assets/docs/AndrewKelleher_Resume.pdf", "_blank")}><Icon className="far fa-fw fa-file-pdf" /> View Résumé</Button>
                         </Box>
                    </Grid>
                    </div>
