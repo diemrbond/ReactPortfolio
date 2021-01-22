@@ -21,6 +21,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
+import Link from '@material-ui/core/Link';
 
 const images = [
     {
@@ -102,7 +103,8 @@ export default function Portfolio() {
                 <Grid container spacing={0} alignItems="center" justify="center" style={{ minHeight: 500 }}>
                     <div>
                      <Grid item xs={12} align="center" className={classes.grid}>
-                        <Typography align="center" variant="h4" className={classes.typography}>PORTFOLIO</Typography>                          
+                        <Typography align="center" variant="h4" className={classes.typography}>PORTFOLIO</Typography>   
+                        <Link to="/#home"> Home </Link>                       
                         <div class="divider-custom">
                             <div class="divider-custom-line"></div>
                             <div class="divider-custom-icon"><Icon className="fas fa-folder-open" /></div>

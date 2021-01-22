@@ -59,7 +59,7 @@ export default function About() {
 
     return (
         <div >
-            <div className={classes.about}>
+            <div className={classes.about} >
                 <Grid container spacing={0} alignItems="center" justify="center" style={{ minHeight: 500 }}>
                     <div>
                      <Grid item xs={12} align="center" className={classes.grid}>

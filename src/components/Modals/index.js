@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 900,
     margin: 50,
     paddingTop: 50,
-    paddingBottom: 50,
+    paddingBottom: 10,
   },
   imageSrc: {
     height: '100%',
@@ -99,7 +99,7 @@ export default function Modals() {
                 <div class="divider-custom-icon"><Icon className="fas fa-star" /></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <img className={classes.imageSrc} src={WeatherPreview} smDown={9}/>
+            <img className={classes.imageSrc} alt="" src={WeatherPreview} smDown={9}/>
             <Typography id="transition-modal-description" variant="body1" className={classes.body}>For this project we needed to make a Weather Dashboard, that we can search for a City using the openweathermap API returning the temperature, humidity, UV index, wind speed and a 5 day forecast. The cities needed to be added to a search history for easy re-searching.</Typography>
             <Box m={5} >
                 <Button variant="contained" color="warning" disableElevation size="large" className={classes.button}>Visit Project</Button>
