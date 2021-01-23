@@ -1,8 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
 import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -17,6 +14,10 @@ import BurgerPreview from './assets/burger.gif';
 import QuizPreview from './assets/quiz-preview.png';
 import WeatherPreview from './assets/weather-preview.png';
 import EmployeePreview from './assets/employee.gif';
+
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
 
 const theModals = [
   {
@@ -82,23 +83,13 @@ const theModals = [
 ];
 
 const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: 'flex',
-    alignItems: 'center',      
-    justifyContent: 'center',
-    overflowY:'scroll',
-    height:'100%',
-  },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(2, 4, 3),
     borderRadius: '2rem',
     border: 0,
     outline: 'none',
     maxWidth: 900,
     margin: 50,
-    paddingTop: 50,
-    paddingBottom: 10,
   },
   imageSrc: {
     height: '100%',
@@ -111,15 +102,15 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
     marginBottom: 14,
     fontFamily: 'SB Heading, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji',
-},
-body: {
+  },
+  body: {
     color: '#212529',
     fontSize: '1rem',
     marginTop: 14,
     marginRight: 14,
     marginLeft: 14,
-},
-button: {
+  },
+  button: {
     textTransform: 'unset !important',
     margin: 5,
     color: '#FFFFFF',
@@ -127,79 +118,107 @@ button: {
     '&:hover': {
       color: '#FFFFFF',
       background: "#159a80",
-  },
-},
-  gitButton: {
-      textTransform: 'unset !important',
-      margin: 5,
-      color: '#FFFFFF',
-      background: '#17a2b8',
-      '&:hover': {
-        color: '#FFFFFF',
-        background: "#138496",
     },
   },
-icons: {
-  marginRight: 10
-}
+  gitButton: {
+    textTransform: 'unset !important',
+    margin: 5,
+    color: '#FFFFFF',
+    background: '#17a2b8',
+    '&:hover': {
+      color: '#FFFFFF',
+      background: "#138496",
+    },
+  },
+  icons: {
+    marginRight: 10
+  }
 }));
 
 export default function Modals(props) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
   const modalDetails = props.modalDetails;
   const setWhichModal = props.setWhichModal;
 
   const [currentModal, setCurrentModal] = useState(0);
 
-  useEffect(() => {
-    if (modalDetails !== ""){
+  const [open, setOpen] = React.useState(false);
+  const [scroll, setScroll] = React.useState('paper');
 
-      for (var i=0; i<theModals.length; i++){
-
-        if (theModals[i].title === modalDetails){
-          setCurrentModal(i);
-          console.log("currentModal: "+theModals[currentModal].github)
-        }
-      }
-
-      setOpen(true);
-    }
-    
-  }, [modalDetails]);
-
-  // const handleOpen = () => {
-  //   setOpen(true);
-  // };
+  const handleClickOpen = (scrollType) => () => {
+    setOpen(true);
+    setScroll(scrollType);
+  };
 
   const handleClose = () => {
     setOpen(false);
     setWhichModal("");
   };
 
+  const descriptionElementRef = React.useRef(null);
+  React.useEffect(() => {
+    if (open) {
+      const { current: descriptionElement } = descriptionElementRef;
+      if (descriptionElement !== null) {
+        descriptionElement.focus();
+      }
+    }
+  }, [open]);
+
+  useEffect(() => {
+    if (modalDetails !== "") {
+
+      for (var i = 0; i < theModals.length; i++) {
+
+        if (theModals[i].title === modalDetails) {
+          setCurrentModal(i);
+        }
+      }
+
+      setOpen(true);
+    }
+
+  }, [modalDetails]);
+
   return (
     <div>
-      <Modal aria-labelledby="transition-modal-title" aria-describedby="transition-modal-description" className={classes.modal} open={open} onClose={handleClose} closeAfterTransition BackdropComponent={Backdrop} BackdropProps={{timeout: 500,}}>
-        <Fade in={open}>
-          <div className={classes.paper} align="center">
-            <Typography id="transition-modal-title" align="center" variant="h2" className={classes.typography}>{theModals[currentModal].title}</Typography>  
-            <div className="divider-custom">
-                <div className="divider-custom-line"></div>
-                <div className="divider-custom-icon"><Icon className="fas fa-star" /></div>
-                <div className="divider-custom-line"></div>
-            </div>
-            <img className={classes.imageSrc} alt={theModals[currentModal].title} src={theModals[currentModal].url} smDown={9}/>
-            <Typography id="transition-modal-description" variant="body1" className={classes.body}>{theModals[currentModal].text}</Typography>
-            <Box m={5} >
-              {theModals[currentModal].project !== undefined &&
-                <Button onClick={() => window.open(theModals[currentModal].project, "_blank")} variant="contained" color="warning" disableElevation size="large" className={classes.button}>Visit Project</Button>}
-                {theModals[currentModal].github !== undefined &&
-                <Button onClick={() => window.open(theModals[currentModal].github, "_blank")} variant="contained" color="warning" disableElevation size="large" className={classes.gitButton}><Icon className={"fab fa-github " + classes.icons} /> Visit GitHub</Button>}
-            </Box>  
-          </div>
-        </Fade>
-      </Modal>
+
+      <div>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          scroll={scroll}
+          aria-labelledby="scroll-dialog-title"
+          aria-describedby="scroll-dialog-description" maxWidth='false'
+        >
+          <DialogContent dividers={scroll === 'paper'}>
+            <DialogContentText
+              id="scroll-dialog-description"
+              ref={descriptionElementRef}
+              tabIndex={-1}
+            >
+              <div className={classes.paper} align="center">
+                <Typography id="transition-modal-title" align="center" variant="h2" className={classes.typography}>{theModals[currentModal].title}</Typography>
+                <div className="divider-custom">
+                  <div className="divider-custom-line"></div>
+                  <div className="divider-custom-icon"><Icon className="fas fa-star" /></div>
+                  <div className="divider-custom-line"></div>
+                </div>
+                <img className={classes.imageSrc} alt={theModals[currentModal].title} src={theModals[currentModal].url} smDown={9} />
+                <Typography id="transition-modal-description" variant="body1" className={classes.body}>{theModals[currentModal].text}</Typography>
+                <Box m={5} >
+                  {theModals[currentModal].project !== undefined &&
+                    <Button onClick={() => window.open(theModals[currentModal].project, "_blank")} variant="contained" color="warning" disableElevation size="large" className={classes.button}>Visit Project</Button>}
+                  {theModals[currentModal].github !== undefined &&
+                    <Button onClick={() => window.open(theModals[currentModal].github, "_blank")} variant="contained" color="warning" disableElevation size="large" className={classes.gitButton}><Icon className={"fab fa-github " + classes.icons} /> Visit GitHub</Button>}
+                </Box>
+              </div>
+            </DialogContentText>
+          </DialogContent>
+        </Dialog>
+      </div>
     </div>
   );
 }
