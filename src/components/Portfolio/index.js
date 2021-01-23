@@ -14,6 +14,7 @@ import Interface from '../Project/assets/interface.gif'
 import Burger from '../Project/assets/burger.png'
 import Quiz from '../Project/assets/quiz.png'
 import Weather from '../Project/assets/weather.png'
+import Employee from '../Project/assets/employee.png'
 
 
 // Material UI Components
@@ -54,6 +55,10 @@ const images = [
     {
       url: Weather,
       title: 'Weather Dashboard',
+    },
+    {
+      url: Employee,
+      title: 'Employee Directory',
     },
   ];
 

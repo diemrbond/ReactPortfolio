@@ -16,6 +16,7 @@ import InterfacePreview from './assets/interface-preview.png';
 import BurgerPreview from './assets/burger.gif';
 import QuizPreview from './assets/quiz-preview.png';
 import WeatherPreview from './assets/weather-preview.png';
+import EmployeePreview from './assets/employee.gif';
 
 const theModals = [
   {
@@ -70,6 +71,13 @@ const theModals = [
     text: "For this project we needed to make a Weather Dashboard, that we can search for a City using the openweathermap API returning the temperature, humidity, UV index, wind speed and a 5 day forecast. The cities needed to be added to a search history for easy re-searching.",
     github: "https://github.com/diemrbond/WeatherDashboard",
     project: "https://diemrbond.github.io/WeatherDashboard/"
+  },
+  {
+    url: EmployeePreview,
+    title: 'Employee Directory',
+    text: "For this project, we needed to create a working Employee Directory using React JS. The project required to be broken up into components, using component state and responding to user events. They should be able to sort by table headers and filter by employee name. I also included Material UI for the styling.",
+    github: "https://github.com/diemrbond/EmployeeDirectory",
+    project: "https://diemrbond.github.io/EmployeeDirectory/"
   },
 ];
 
