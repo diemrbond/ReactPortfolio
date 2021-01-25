@@ -9,6 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import * as React from "react";
 import { useState } from "react";
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     list: {
@@ -49,11 +50,11 @@ const MenuDrawer = ({ navLinks }) => {
         >
             <List component="nav">
                 {navLinks.map(({ title, path }) => (
-                    <a href={path} key={title} className={classes.linkText}>
+                    <Link to={path} key={title} className={classes.linkText}>
                         <ListItem button>
                             <ListItemText primary={title} align="center"/>
                         </ListItem>
-                    </a>
+                    </Link>
                 ))}
             </List>
         </div>
